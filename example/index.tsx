@@ -51,10 +51,27 @@ const App = () => {
     maxSpeed: supportsTouch ? 0.01 : 0.05,
   }
 
+
+  const tags2: Tag[] = [
+    {
+      key: 0,
+      title: 'Hello',
+      imgSrc: 'https://openmoji.org/data/color/svg/1F44B.svg',
+      imgWidth: 50,
+      imgHeight: 50,
+    },
+    {
+      key: 1,
+      title: 'World',
+      imgSrc: 'https://openmoji.org/data/color/svg/1F30D.svg',
+      imgWidth: 50,
+      imgHeight: 50,
+    }
+  ]
   return (
     <div>
       <ReactTagCanvas type={'word'} tags={tags1} key={v4()} tagCanvasOptions={options1}/>
-      <ReactTagCanvas type={'word'} tags={tags1} key={v4()} tagCanvasOptions={options2}/>
+      <ReactTagCanvas type={'img'} tags={tags2} key={v4()} tagCanvasOptions={options2}/>
       <button onClick={() => setState(!state)}>toggle</button>
     </div>
   );

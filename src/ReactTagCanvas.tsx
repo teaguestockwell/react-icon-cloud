@@ -15,17 +15,8 @@ export const ReactTagCanvas = (
     canvasWidth = 1000,
     canvasStyle = {},
     type = 'img',
-  }:
-  {
-    tagCanvasOptions: Types.TagCanvasOptions
-    /** given the type is img, then tags should be img srcs */
-    type?: 'img' | 'word'
-    tags: Types.Tag[]
-    innerStyle?: React.CSSProperties
-    canvasWidth?: number
-    canvasHeight?: number
-    canvasStyle?: React.CSSProperties
-  }
+  }: Types.ReactTagCanvasProps
+  
 ) => {
   const state = useRef({
     canvasContainerId: 'canvas-container-' + v4(),
@@ -82,7 +73,6 @@ export const ReactTagCanvas = (
         key={key} 
         href={href} 
         title={title}
-        style={{color: 'black'}}
       >
         {
           type === 'img' ?
