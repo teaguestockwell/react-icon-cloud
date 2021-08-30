@@ -36,6 +36,24 @@
   },
   "name": "react-tag-canvas",
   "author": "Teague Stockwell",
+  "keywords": [
+    "react-component",
+    "react",
+    "tag-canvas",
+    "word-cloud",
+    "tag-cloud",
+    "wordcloud",
+    "tagcloud",
+    "canvas"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsAppDevelopment/react-tag-canvas"
+  },
+  "bugs": {
+    "url": "https://github.com/tsAppDevelopment/react-tag-canvas/issues"
+  },
+  "homepage": "https://github.com/tsAppDevelopment/react-tag-canvas",
   "module": "dist/react-tag-canvas.esm.js",
   "size-limit": [
     {
@@ -49,9 +67,12 @@
   ],
   "devDependencies": {
     "@size-limit/preset-small-lib": "^5.0.3",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
     "@types/react": "^17.0.19",
     "@types/react-dom": "^17.0.9",
     "husky": "^7.0.2",
+    "pretty-quick": "^3.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "size-limit": "^5.0.3",
@@ -60,6 +81,6 @@
     "typescript": "^3.9.10"
   },
   "dependencies": {
-    "pretty-quick": "^3.1.1"
+    "react-hooks-visible": "^1.1.1"
   }
 }
