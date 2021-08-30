@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import {useVisible} from 'react-hooks-visible'
 import {tagCanvasString} from './tagCanvasString'
 import * as Types from './types/types'
+import {v4} from 'uuid'
+
+let isTagCanvasScripLoaded = false
 
 export const ReactTagCanvas = (
   {
@@ -14,7 +17,7 @@ export const ReactTagCanvas = (
     type = 'img',
   }:
   {
-    tagCanvasOptions?: Partial<Types.TagCanvasOptions>
+    tagCanvasOptions: Types.TagCanvasOptions
     /** given the type is img, then tags should be img srcs */
     type?: 'img' | 'word'
     tags: Types.Tag[]
@@ -24,59 +27,44 @@ export const ReactTagCanvas = (
     canvasStyle?: React.CSSProperties
   }
 ) => {
+  const state = useRef({
+    canvasContainerId: 'canvas-container-' + v4(),
+    canvasId: 'canvas-' + v4(),
+    hasStarted: false,
+  }).current
   const [ref, visible] = useVisible((vi: number) => vi > 0.3)
-  
-  const hasStarted = React.useRef({started: false}).current
 
-  const supportsTouch = 'ontouchstart' in window || navigator.maxTouchPoints
-
-  const tcOptions: Types.TagCanvasOptions = {
-      textColour: '#0000',
-      outlineColour: '#0000',
-      reverse: true,
-      depth: 1,
-      wheelZoom: false,
-      imageScale: 2,
-      activeCursor: 'default',
-      tooltip: 'native',
-      initial: [0.1,-0.1],
-      clickToFront: 500,
-      tooltipDelay: 0,
-      dragControl: supportsTouch ? true : false,
-      maxSpeed: supportsTouch ? 0.01 : 0.05,
-      ...tagCanvasOptions as any
-    }
-
-  
     React.useEffect(() => {
-      eval(tagCanvasString)
-
-      const optionString = JSON.stringify(tcOptions)
-
-      eval(
-        `
-        console.log('starting tag canvas')
-          try {
-            TagCanvas.Start('myCanvas','tags')
-          } catch(e) {
-            document.getElementById('myCanvasContainer').style.display = 'none';
-          } 
-        `
-      )
-      hasStarted.started = true
+       // load global instance of tag canvas script
+       if(!isTagCanvasScripLoaded){
+        eval(tagCanvasString)
+        isTagCanvasScripLoaded = true
+      }
     },[])
 
-    // given the canvas is loaded, when it is not visible, then stop the canvas
-    // given the canvas is loaded, when it is visible, then start the canvas
+    // start the local instance of tag canvas
     React.useEffect(() => {
-      if (hasStarted.started) {
+      try{
+        eval(`TagCanvas.Start('${state.canvasId}', null, ${JSON.stringify(tagCanvasOptions)})`)
+        state.hasStarted = true
+      } catch (e){
+        (document.getElementById(state.canvasContainerId) as any).style.display = 'none'
+      }
+
+      return () => eval(`TagCanvas.Delete('${state.canvasId}')`)
+
+    },[])
+
+    // it will not load canvas animations when its outside the viewport
+    React.useEffect(() => {
+      if (state.hasStarted) {
         if (visible) {
-          eval(`TagCanvas.Resume("myCanvas")`)
+          eval(`TagCanvas.Resume('${state.canvasId}')`)
         } else {
-          eval(`TagCanvas.Pause("myCanvas")`)
+          eval(`TagCanvas.Pause('${state.canvasId}')`)
         }
       }
-    }, [visible, hasStarted])
+    }, [visible, state.hasStarted])
 
   const getTag = (
     {
@@ -112,33 +100,21 @@ export const ReactTagCanvas = (
     )
   }
 
-
   return (
-    <>
     <div ref={ref as any}>
       <div
-        id="myCanvasContainer"
+        id={state.canvasContainerId}
         style={innerStyle}
       >
         <canvas
-          id="myCanvas"
+          id={state.canvasId}
           style={{width: '100%', maxWidth: '70vh', ...canvasStyle}}
           width={canvasWidth}
           height={canvasHeight}
-        />
+        >
+          {tags.map(getTag)}
+        </canvas>
       </div>
     </div>
-
-    <div 
-      id="tags" 
-      style={{
-        fontSize: '70%', 
-        display: 'none'
-      }}
-    >
-      {tags.map(getTag)}
-    </div>
-    <h2>{Date.now()}</h2>
-  </>
   )
 }
