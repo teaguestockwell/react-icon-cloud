@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -34,8 +34,12 @@
     "trailingComma": "es5",
     "bracketSpacing": false
   },
-  "name": "react-tag-canvas",
-  "author": "Teague Stockwell",
+  "name": "react-tagcanvas",
+  "author": {
+    "name": "Teague Stockwell",
+    "email": "tsappdevelopment@gmail.com",
+    "url": "https://eaguestockwell.com"
+  },
   "keywords": [
     "react-component",
     "react",

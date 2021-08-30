@@ -9,14 +9,14 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <!-- <a href="https://teaguestockwell.com">
-    <img src="./public/mstile-150x150.png" alt="Logo" width="150" height="150">
-  </a> -->
+  <a href="https://github.com/tsAppDevelopment/react-tag-canvas">
+    <img src="https://user-images.githubusercontent.com/71202372/131417256-58058879-f14c-4c03-9bdf-03bd1c80f25d.gif" alt="Logo" width="80%" >
+  </a>
 
-  <h3 align="center">React Tag Canvas</h3>
+  <h3 align="center">React TagCanvas</h3>
 
   <p align="center">
-    React component for rendering an interactive img cloud on canvas.
+    React component for rendering an interactive img or word cloud on canvas.
     <br />
     <a href="https://teaguestockwell.com">View Demo</a>
     ·
@@ -24,12 +24,19 @@
   </p>
 </p>
 
+## About
+An interactive 3D tag cloud component for React that renders text and images into a interactive 3D tag cloud. 
+
+- Built in support for rendering a cloud of [Simple Icons](https://github.com/simple-icons/simple-icons) with custom fallback color for poor contrast
+
+- Lazy animation of the canvas (pause animation when off screen) 
 
 ## Built With
 
 - [TSdx](https://github.com/formium/tsdx)
 - [TypeScript](https://www.typescriptlang.org)
-- [Tag Canvas](https://www.goat1000.com/tagcanvas.php)
+- [TagCanvas](https://www.goat1000.com/tagcanvas.php)
+- [Simple Icons](https://github.com/simple-icons/simple-icons)
 
 ## Getting Started
 
@@ -44,9 +51,20 @@ npm i react-tag-canvas
 import {IconTag, ReactTagCanvas, ReactTagCanvasSimpleIconsSSR, Tag, TagCanvasOptions } from 'react-tag-canvas'
 ```
 
+Then use either of the components:
+
+```tsx
+<ReactTagCanvasSimpleIconsSSR minContrast={1} size={50} backgroundHexColor={'#fff'} fallbackHexColor={'#000'} tags={tags3} key={v4()} tagCanvasOptions={options1}/>
+```
+
+```tsx
+  <ReactTagCanvas type={'img'} tags={tags2} key={v4()} tagCanvasOptions={options2}/>
+```
+
 
 ## Example
-[code](https://github.com/tsAppDevelopment/react-tag-canvas/blob/master/example/index.tsx)
+[Tag Canvas Options](https://www.goat1000.com/tagcanvas-options.php)
+[React Tag Cloud](https://github.com/tsAppDevelopment/react-tag-canvas/blob/master/example/index.tsx)
 ## Roadmap
 
 See the [open issues](https://github.com/tsappdevelopment/hello2/issues) for a list of proposed features (and known issues).
