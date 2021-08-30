@@ -5,4 +5,5 @@ export interface Tag {
   imgWidth?: number
   imgHeight?: number
   imgSrc?: string
+  onClick?: (tag: Tag) => any
 }

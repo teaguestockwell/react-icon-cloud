@@ -64,7 +64,8 @@ export const ReactTagCanvas = (
       href = 'javascript:;', 
       imgWidth = 32,
       imgHeight = 32,
-      imgSrc = ''
+      imgSrc = '',
+      onClick = () => {}
   }
     : Types.Tag
   ) => {
@@ -73,6 +74,18 @@ export const ReactTagCanvas = (
         key={key} 
         href={href} 
         title={title}
+        onClick={e => {
+          e.preventDefault()
+          onClick({
+            key,
+            title,
+            href, 
+            imgWidth,
+            imgHeight,
+            imgSrc,
+            onClick
+          })
+        }}
       >
         {
           type === 'img' ?
