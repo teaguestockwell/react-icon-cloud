@@ -73,7 +73,7 @@ export const Cloud = (
 
   const getTag = (
     {
-      key,
+      id,
       title,
       href = 'javascript:;', 
       imgWidth = 32,
@@ -85,13 +85,13 @@ export const Cloud = (
   ) => {
     return (
       <a 
-        key={key} 
+        key={id} 
         href={href} 
         title={title}
         onClick={e => {
           e.preventDefault()
           onClick({
-            key,
+            id,
             title,
             href, 
             imgWidth,
