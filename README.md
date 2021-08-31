@@ -9,18 +9,18 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/tsAppDevelopment/react-tag-canvas">
+  <a href="https://github.com/tsAppDevelopment/react-icon-cloud">
     <img src="https://user-images.githubusercontent.com/71202372/131417256-58058879-f14c-4c03-9bdf-03bd1c80f25d.gif" alt="Logo" width="80%" >
   </a>
 
-  <h3 align="center">React TagCanvas</h3>
+  <h3 align="center">React Icon Cloud</h3>
 
   <p align="center">
     React component for rendering an interactive img or word cloud on canvas.
     <br />
     <a href="https://teaguestockwell.com">View Demo</a>
     ·
-    <a href="https://github.com/tsAppDevelopment/react-tag-canvas/issues">Report Bug</a>
+    <a href="https://github.com/tsAppDevelopment/react-icon-cloud/issues">Report Bug</a>
   </p>
 </p>
 
@@ -44,11 +44,11 @@ To get a local copy up and running follow these simple steps.
 
 
 ```sh
-npm i react-tag-canvas
+npm i react-icon-cloud
 ```
 
 ```typescript
-import {IconTag, ReactTagCanvas, ReactTagCanvasSimpleIconsSSR, Tag, TagCanvasOptions } from 'react-tag-canvas'
+import {IconTag, ReactTagCanvas, ReactTagCanvasSimpleIconsSSR, Tag, TagCanvasOptions } from 'react-icon-cloud'
 ```
 
 Then use either of the components:
@@ -64,7 +64,7 @@ Then use either of the components:
 
 ## Example
 [Tag Canvas Options](https://www.goat1000.com/tagcanvas-options.php)
-[React Tag Cloud](https://github.com/tsAppDevelopment/react-tag-canvas/blob/master/example/index.tsx)
+[React Tag Cloud](https://github.com/tsAppDevelopment/react-icon-cloud/blob/master/example/index.tsx)
 ## Roadmap
 
 See the [open issues](https://github.com/tsappdevelopment/hello2/issues) for a list of proposed features (and known issues).

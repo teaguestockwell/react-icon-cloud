@@ -1,5 +1,6 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "description": "A React component for rendering an interactive img or word cloud on canvas",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -34,11 +35,11 @@
     "trailingComma": "es5",
     "bracketSpacing": false
   },
-  "name": "react-tagcanvas",
+  "name": "react-icon-cloud",
   "author": {
     "name": "Teague Stockwell",
     "email": "tsappdevelopment@gmail.com",
-    "url": "https://eaguestockwell.com"
+    "url": "https://teaguestockwell.com"
   },
   "keywords": [
     "react-component",
@@ -48,24 +49,27 @@
     "tag-cloud",
     "wordcloud",
     "tagcloud",
+    "canvas",
+    "react-tag-canvas",
+    "img-cloud",
     "canvas"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/tsAppDevelopment/react-tag-canvas"
+    "url": "https://github.com/tsAppDevelopment/react-icon-cloud"
   },
   "bugs": {
-    "url": "https://github.com/tsAppDevelopment/react-tag-canvas/issues"
+    "url": "https://github.com/tsAppDevelopment/react-icon-cloud/issues"
   },
-  "homepage": "https://github.com/tsAppDevelopment/react-tag-canvas",
-  "module": "dist/react-tag-canvas.esm.js",
+  "homepage": "https://github.com/tsAppDevelopment/react-icon-cloud",
+  "module": "dist/react-icon-cloud.esm.js",
   "size-limit": [
     {
-      "path": "dist/react-tag-canvas.cjs.production.min.js",
+      "path": "dist/react-icon-cloud.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/react-tag-canvas.esm.js",
+      "path": "dist/react-icon-cloud.esm.js",
       "limit": "10 KB"
     }
   ],
