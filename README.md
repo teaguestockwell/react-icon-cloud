@@ -48,17 +48,17 @@ npm i react-icon-cloud
 ```
 
 ```typescript
-import {IconTag, ReactTagCanvas, ReactTagCanvasSimpleIconsSSR, Tag, TagCanvasOptions } from 'react-icon-cloud'
+import {IconTag, Cloud, IconCloud, Tag, TagCanvasOptions } from 'react-icon-cloud'
 ```
 
 Then use either of the components:
 
 ```tsx
-<ReactTagCanvasSimpleIconsSSR minContrast={1} size={50} backgroundHexColor={'#fff'} fallbackHexColor={'#000'} tags={tags3} key={v4()} tagCanvasOptions={options1}/>
+<IconCloud minContrast={1} size={50} backgroundHexColor={'#fff'} fallbackHexColor={'#000'} tags={tags3} key={v4()} tagCanvasOptions={options1}/>
 ```
 
 ```tsx
-  <ReactTagCanvas type={'img'} tags={tags2} key={v4()} tagCanvasOptions={options2}/>
+  <Cloud type={'img'} tags={tags2} key={v4()} tagCanvasOptions={options2}/>
 ```
 
 

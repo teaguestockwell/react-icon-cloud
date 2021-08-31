@@ -1,6 +1,6 @@
 import * as Types from './types'
 
-export interface ReactTagCanvasProps {
+export interface CloudProps {
   tagCanvasOptions: Types.TagCanvasOptions
   type?: 'img' | 'word'
   tags: Types.Tag[]

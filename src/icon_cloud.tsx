@@ -1,6 +1,6 @@
 import simpleIcons from 'simple-icons'
 import * as Types from './types/types'
-import { ReactTagCanvas} from './ReactTagCanvas'
+import { Cloud} from './cloud'
 import React from 'react'
 import {hex2contrast, hex2rgb} from '@csstools/convert-colors'
 import { v4 } from 'uuid'
@@ -46,7 +46,7 @@ export const getTags = (
   }
 })
 
-export const ReactTagCanvasSimpleIconsSSR = (
+export const IconCloud = (
   {
     tagCanvasOptions = {},
     tags = [],
@@ -58,7 +58,7 @@ export const ReactTagCanvasSimpleIconsSSR = (
     backgroundHexColor,
     size,
     minContrast = 1
-  }: Types.IconTagCanvasProps
+  }: Types.IconCloudProps
   
 ) => {
 
@@ -70,7 +70,7 @@ export const ReactTagCanvasSimpleIconsSSR = (
     minContrast
   })
 
-  return <ReactTagCanvas
+  return <Cloud
     tagCanvasOptions={tagCanvasOptions}
     tags={tags2}
     innerStyle={innerStyle}

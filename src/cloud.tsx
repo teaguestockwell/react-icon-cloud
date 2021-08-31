@@ -1,12 +1,12 @@
 import React, { useRef } from 'react'
 import {useVisible} from 'react-hooks-visible'
-import {tagCanvasString} from './tagCanvasString'
+import {tagCanvasString} from './tag_canvas_string'
 import * as Types from './types/types'
 import {v4} from 'uuid'
 
 let isTagCanvasScripLoaded = false
 
-export const ReactTagCanvas = (
+export const Cloud = (
   {
     tagCanvasOptions = {},
     tags = [],
@@ -15,7 +15,7 @@ export const ReactTagCanvas = (
     canvasWidth = 1000,
     canvasStyle = {},
     type = 'img',
-  }: Types.ReactTagCanvasProps
+  }: Types.CloudProps
   
 ) => {
   const state = useRef({

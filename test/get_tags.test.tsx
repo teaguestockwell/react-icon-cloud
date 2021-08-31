@@ -1,5 +1,5 @@
 import * as Types from '../src/types/types'
-import * as Icon from '../src/ReactTagCanvasSimpleIconsSSR'
+import * as Icon from '../src/icon_cloud'
 import {hex2rgb} from '@csstools/convert-colors'
 
 it('should transform simple icon slugs', () => {

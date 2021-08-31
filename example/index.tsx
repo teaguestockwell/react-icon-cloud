@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import {IconTag, ReactTagCanvas, ReactTagCanvasSimpleIconsSSR, Tag, TagCanvasOptions } from '../.'
+import {IconTag, Cloud, IconCloud, Tag, TagCanvasOptions } from '../.'
 import {v4} from 'uuid'
 
 const App = () => {
@@ -86,9 +86,9 @@ const App = () => {
   ]
   return (
     <div>
-      <ReactTagCanvas type={'word'} tags={tags1} key={v4()} tagCanvasOptions={options1}/>
-      <ReactTagCanvas type={'img'} tags={tags2} key={v4()} tagCanvasOptions={options2}/>
-      <ReactTagCanvasSimpleIconsSSR minContrast={1} size={50} backgroundHexColor={'#fff'} fallbackHexColor={'#000'} tags={tags3} key={v4()} tagCanvasOptions={options1}/>
+      <Cloud type={'word'} tags={tags1} key={v4()} tagCanvasOptions={options1}/>
+      <Cloud type={'img'} tags={tags2} key={v4()} tagCanvasOptions={options2}/>
+      <IconCloud minContrast={1} size={50} backgroundHexColor={'#fff'} fallbackHexColor={'#000'} tags={tags3} key={v4()} tagCanvasOptions={options1}/>
       <button onClick={() => setState(!state)}>toggle</button>
     </div>
   );
