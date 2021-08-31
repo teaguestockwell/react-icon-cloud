@@ -1,4 +1,3 @@
-import simpleIcons from 'simple-icons'
 import * as Types from './types/types'
 import { Cloud} from './cloud'
 import React from 'react'
@@ -20,14 +19,9 @@ export const getTags = (
     minContrast: number
   }
 ): Types.Tag[] => tags.map(t => {
-  const icon = simpleIcons.get(t.simpleIconSlug)
   
   const addHash = (color:string) => color[0] === '#' ? color : `#${color}`
-
-  if(!icon){
-    throw new Error(`Icon ${t.simpleIconSlug} is not a simple icon`)
-  }
-
+  const icon = t.simpleIcon
   const originalHex =  addHash(icon.hex)
   const bgHex = addHash(bgColor)
   const isAccessibleColor = hex2contrast(bgHex, originalHex) > minContrast

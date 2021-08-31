@@ -1,5 +1,5 @@
 export interface IconTag {
-  simpleIconSlug:string
+  simpleIcon: any
   id: string | number
   hexColorOverride?:string
 }

@@ -2,6 +2,9 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import {IconTag, Cloud, IconCloud, Tag, TagCanvasOptions } from '../.'
 import {v4} from 'uuid'
+import react from 'simple-icons/icons/react'
+import ts  from 'simple-icons/icons/typescript'
+import js  from 'simple-icons/icons/javascript'
 
 const App = () => {
   const [state, setState] = React.useState(true)
@@ -67,19 +70,19 @@ const App = () => {
   const tags3: IconTag[] = [
     {
       id: 0,
-      simpleIconSlug: 'react'
+      simpleIcon: react,
     },
     {
       id: 1,
-      simpleIconSlug: 'nodedotjs'
+      simpleIcon: ts,
     },
     {
       id: 2,
-      simpleIconSlug: 'typescript'
+      simpleIcon: js,
     },
     {
       id: 3,
-      simpleIconSlug: 'javascript'
+      simpleIcon: react,
     },
   ]
   return (

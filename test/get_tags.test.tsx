@@ -1,20 +1,21 @@
 import * as Types from '../src/types/types'
 import * as Icon from '../src/icon_cloud'
 import {hex2rgb} from '@csstools/convert-colors'
+import react from 'simple-icons/icons/react'
 
 it('should transform simple icon slugs', () => {
   const tags: Types.IconTag[] = [
     {
       id: 'react',
-      simpleIconSlug: 'react',
+      simpleIcon: react,
     },
     {
       id: 'js',
-      simpleIconSlug: 'javascript',
+      simpleIcon: react
     },
     {
       id: 'ts',
-      simpleIconSlug: 'typescript',
+      simpleIcon: react
     }
   ]
 
