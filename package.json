@@ -1,5 +1,5 @@
 {
-  "version": "1.0.2",
+  "version": "1.0.10",
   "description": "A React component for rendering an interactive img or word cloud on canvas",
   "license": "MIT",
   "main": "dist/index.js",
@@ -94,7 +94,6 @@
   "dependencies": {
     "@csstools/convert-colors": "^2.0.0",
     "react-hooks-visible": "^1.1.1",
-    "simple-icons": "^5.12.0",
-    "uuid": "^8.3.2"
+    "simple-icons": "^5.12.0"
   }
 }

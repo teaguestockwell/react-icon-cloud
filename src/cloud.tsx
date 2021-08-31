@@ -2,15 +2,15 @@ import React, { useRef } from 'react'
 import {useVisible} from 'react-hooks-visible'
 import {tagCanvasString} from './tag_canvas_string'
 import * as Types from './types/types'
-import {v4} from 'uuid'
 
 let isTagCanvasScripLoaded = false
 
 export const Cloud = (
   {
+    id,
     tagCanvasOptions = {},
     tags = [],
-    innerStyle = {},
+    canvasContainerStyle = {},
     canvasHeight = 1000,
     canvasWidth = 1000,
     canvasStyle = {},
@@ -19,8 +19,8 @@ export const Cloud = (
   
 ) => {
   const state = useRef({
-    canvasContainerId: 'canvas-container-' + v4(),
-    canvasId: 'canvas-' + v4(),
+    canvasContainerId: 'canvas-container-' + id,
+    canvasId: 'canvas-' + id,
     hasStarted: false,
   }).current
   const [ref, visible] = useVisible((vi: number) => vi > 0.3)
@@ -35,11 +35,25 @@ export const Cloud = (
 
     // start the local instance of tag canvas
     React.useEffect(() => {
+      const supportsTouch = 'ontouchstart' in window || navigator.maxTouchPoints
+
+      const options = {
+        dragControl: supportsTouch ? true : false,
+        maxSpeed: supportsTouch ? 0.01 : 0.05,
+        ...tagCanvasOptions
+      }
+
       try{
-        eval(`TagCanvas.Start('${state.canvasId}', null, ${JSON.stringify(tagCanvasOptions)})`)
+        eval(`TagCanvas.Start('${state.canvasId}', null, ${JSON.stringify(options)})`)
         state.hasStarted = true
       } catch (e){
-        (document.getElementById(state.canvasContainerId) as any).style.display = 'none'
+        let el: HTMLElement | null = document.getElementById(state.canvasContainerId)
+
+        if(el){
+          el.style.display = 'none'
+        }
+        
+        throw e
       }
 
       return () => eval(`TagCanvas.Delete('${state.canvasId}')`)
@@ -107,7 +121,7 @@ export const Cloud = (
     <div ref={ref as any}>
       <div
         id={state.canvasContainerId}
-        style={innerStyle}
+        style={canvasContainerStyle}
       >
         <canvas
           id={state.canvasId}

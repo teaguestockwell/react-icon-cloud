@@ -5,12 +5,15 @@ import {hex2rgb} from '@csstools/convert-colors'
 it('should transform simple icon slugs', () => {
   const tags: Types.IconTag[] = [
     {
+      id: 'react',
       simpleIconSlug: 'react',
     },
     {
+      id: 'js',
       simpleIconSlug: 'javascript',
     },
     {
+      id: 'ts',
       simpleIconSlug: 'typescript',
     }
   ]

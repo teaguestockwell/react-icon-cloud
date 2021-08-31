@@ -3,7 +3,6 @@ import * as Types from './types/types'
 import { Cloud} from './cloud'
 import React from 'react'
 import {hex2contrast, hex2rgb} from '@csstools/convert-colors'
-import { v4 } from 'uuid'
 
 export const getTags = (
   {
@@ -37,7 +36,7 @@ export const getTags = (
   const imgSrc = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" style="fill: rgb(${r}, ${g}, ${b});" viewBox="0 0 24 24" height="${size}px" width="${size}px"> <title>${icon.title}</title> <path d="${icon.path}"></path> </svg>`
 
   return {
-    key: v4(),
+    id: t.id,
     title: icon.title,
     imgWidth: size,
     imgHeight: size,
@@ -48,16 +47,17 @@ export const getTags = (
 
 export const IconCloud = (
   {
+    id,
     tagCanvasOptions = {},
     tags = [],
-    innerStyle = {},
+    canvasContainerStyle: innerStyle = {},
     canvasHeight = 1000,
     canvasWidth = 1000,
     canvasStyle = {},
     fallbackHexColor,
     backgroundHexColor,
-    size,
-    minContrast = 1
+    iconSize: size,
+    minContrastRatio: minContrast = 1
   }: Types.IconCloudProps
   
 ) => {
@@ -71,9 +71,10 @@ export const IconCloud = (
   })
 
   return <Cloud
+    id={id}
     tagCanvasOptions={tagCanvasOptions}
     tags={tags2}
-    innerStyle={innerStyle}
+    canvasContainerStyle={innerStyle}
     canvasHeight={canvasHeight}
     canvasWidth={canvasWidth}
     canvasStyle={canvasStyle}

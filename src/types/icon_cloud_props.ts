@@ -4,6 +4,6 @@ export interface IconCloudProps extends Omit<Types.CloudProps, 'tags' | 'type'> 
   tags: Types.IconTag[]
   fallbackHexColor: string,
   backgroundHexColor: string,
-  size: number,
-  minContrast: number,
+  iconSize: number,
+  minContrastRatio: number,
 }

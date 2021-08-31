@@ -1,6 +1,6 @@
 export interface Tag {
   href?: string 
-  key: string | number
+  id: string | number
   title: string
   imgWidth?: number
   imgHeight?: number
