@@ -52,8 +52,6 @@ export const Cloud = (
         if(el){
           el.style.display = 'none'
         }
-        
-        throw e
       }
 
       return () => eval(`TagCanvas.Delete('${state.canvasId}')`)
@@ -75,7 +73,7 @@ export const Cloud = (
     {
       id,
       title,
-      href = 'javascript:;', 
+      href, 
       imgWidth = 32,
       imgHeight = 32,
       imgSrc = '',

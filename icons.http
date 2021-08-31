@@ -1,0 +1,5 @@
+###
+GET https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/figma.svg
+
+###
+GET https://raw.githubusercontent.com/simple-icons/simple-icons/develop/_data/simple-icons.json
