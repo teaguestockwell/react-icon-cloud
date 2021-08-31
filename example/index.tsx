@@ -6,8 +6,6 @@ import {v4} from 'uuid'
 const App = () => {
   const [state, setState] = React.useState(true)
 
-  const supportsTouch =  'ontouchstart' in window || navigator.maxTouchPoints
-
   const options1: TagCanvasOptions = {
     textColour: state ? 'black' : 'blue',
     outlineColour: '#0000',
@@ -20,17 +18,15 @@ const App = () => {
     initial: [0.1,-0.1] as any,
     clickToFront: 500,
     tooltipDelay: 0,
-    dragControl: supportsTouch ? true : false,
-    maxSpeed: supportsTouch ? 0.01 : 0.05,
   }
 
   const tags1: Tag[] = [
     {
-      key: 0,
+      id: 0,
       title: 'Hello',
     },
     {
-      key: 1,
+      id: 1,
       title: 'World',
     }
   ]
@@ -47,14 +43,12 @@ const App = () => {
     initial: [0.1,-0.1] as any,
     clickToFront: 500,
     tooltipDelay: 0,
-    dragControl: supportsTouch ? true : false,
-    maxSpeed: supportsTouch ? 0.01 : 0.05,
   }
 
 
   const tags2: Tag[] = [
     {
-      key: 0,
+      id: 0,
       title: 'Hello',
       imgSrc: 'https://openmoji.org/data/color/svg/1F44B.svg',
       imgWidth: 50,
@@ -62,7 +56,7 @@ const App = () => {
       onClick: () => alert('hello')
     },
     {
-      key: 1,
+      id: 1,
       title: 'World',
       imgSrc: 'https://openmoji.org/data/color/svg/1F30D.svg',
       imgWidth: 50,
@@ -72,23 +66,27 @@ const App = () => {
 
   const tags3: IconTag[] = [
     {
+      id: 0,
       simpleIconSlug: 'react'
     },
     {
+      id: 1,
       simpleIconSlug: 'nodedotjs'
     },
     {
+      id: 2,
       simpleIconSlug: 'typescript'
     },
     {
+      id: 3,
       simpleIconSlug: 'javascript'
     },
   ]
   return (
     <div>
-      <Cloud type={'word'} tags={tags1} key={v4()} tagCanvasOptions={options1}/>
-      <Cloud type={'img'} tags={tags2} key={v4()} tagCanvasOptions={options2}/>
-      <IconCloud minContrast={1} size={50} backgroundHexColor={'#fff'} fallbackHexColor={'#000'} tags={tags3} key={v4()} tagCanvasOptions={options1}/>
+      <Cloud id={'word'} type={'word'} tags={tags1} key={v4()} tagCanvasOptions={options1}/>
+      <Cloud id={'img'} type={'img'} tags={tags2} key={v4()} tagCanvasOptions={options2}/>
+      <IconCloud id={'icon'} minContrastRatio={1} iconSize={50} backgroundHexColor={'#fff'} fallbackHexColor={'#000'} tags={tags3} key={v4()} tagCanvasOptions={options1}/>
       <button onClick={() => setState(!state)}>toggle</button>
     </div>
   );
