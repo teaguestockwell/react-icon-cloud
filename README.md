@@ -1,10 +1,12 @@
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![MIT License][license-shield]][license-url] [![LinkedIn][linkedin-shield]][linkedin-url] ![size-url] ![size-url2]
 
-[license-shield]: https://img.shields.io/github/license/tsAppDevelopment/hello2.svg
-[license-url]: https://github.com/tsAppDevelopment/hello2/blob/master/licence.txt
+[license-shield]: https://img.shields.io/github/license/tsAppDevelopment/react-icon-cloud.svg
+[license-url]: https://github.com/tsAppDevelopment/react-icon-cloud/blob/master/licence.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/teague-stockwell/
+[size-url]: https://img.shields.io/bundlephobia/minzip/react-icon-cloud
+[size-url2]: https://img.shields.io/bundlephobia/min/react-icon-cloud
+
 
 <!-- PROJECT LOGO -->
 <br />
@@ -67,7 +69,7 @@ Then use either of the components:
 [React Tag Cloud](https://github.com/tsAppDevelopment/react-icon-cloud/blob/master/example/index.tsx)
 ## Roadmap
 
-See the [open issues](https://github.com/tsappdevelopment/hello2/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/tsappdevelopment/react-icon-cloud/issues) for a list of proposed features (and known issues).
 
 ## License
 
