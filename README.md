@@ -1,12 +1,24 @@
-[![MIT License][license-shield]][license-url] [![LinkedIn][linkedin-shield]][linkedin-url] ![size-url] ![size-url2]
+[![license-shield]][license-url] [![linkedin-shield]][linkedin-url] ![size-url] ![size-url2] [![npm-v]][npm-url] [![gh-shield]][gh-url]
 
 [license-shield]: https://img.shields.io/github/license/tsAppDevelopment/react-icon-cloud.svg
+
 [license-url]: https://github.com/tsAppDevelopment/react-icon-cloud/blob/master/licence.txt
+
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?logo=linkedin&colorB=555
+
 [linkedin-url]: https://www.linkedin.com/in/teague-stockwell/
+
 [size-url]: https://img.shields.io/bundlephobia/minzip/react-icon-cloud
+
 [size-url2]: https://img.shields.io/bundlephobia/min/react-icon-cloud
 
+[npm-v]: https://img.shields.io/npm/v/react-icon-cloud
+
+[npm-url]: https://www.npmjs.com/package/react-icon-cloud
+
+[gh-shield]: https://img.shields.io/badge/-GitHub-black.svg?logo=github&colorB=555
+
+[gh-url]: https://github.com/tsAppDevelopment/react-icon-cloud
 
 <!-- PROJECT LOGO -->
 <br />
@@ -18,16 +30,15 @@
   <h3 align="center">React Icon Cloud</h3>
 
   <p align="center">
-    React component for rendering an interactive img or word cloud on canvas.
+    React component for rendering an interactive img or word cloud on canvas
     <br />
-    <a href="https://teaguestockwell.com">View Demo</a>
-    ·
+    <a href="https://codesandbox.io/s/react-icon-cloud-1xr9h">Code Sandbox</a>
     <a href="https://github.com/tsAppDevelopment/react-icon-cloud/issues">Report Bug</a>
   </p>
 </p>
 
 ## About
-An interactive 3D tag cloud component for React that renders text and images into a interactive 3D tag cloud. 
+An interactive 3D tag cloud component for React that renders text and images into a interactive 3D tag cloud
 
 - Built in support for rendering a cloud of [Simple Icons](https://github.com/simple-icons/simple-icons) with custom fallback color for poor contrast
 
@@ -64,9 +75,10 @@ Then use either of the components:
 ```
 
 
-## Example
+## Examples
 [Tag Canvas Options](https://www.goat1000.com/tagcanvas-options.php)
-[React Tag Cloud](https://github.com/tsAppDevelopment/react-icon-cloud/blob/master/example/index.tsx)
+[Code Sandbox](https://codesandbox.io/s/react-icon-cloud-1xr9h)
+[Dynamic Icon Import With Next.js SSR](https://github.com/tsAppDevelopment/portfolio-v2-nextjs/blob/main/src/components/skill_cloud.tsx)
 ## Roadmap
 
 See the [open issues](https://github.com/tsappdevelopment/react-icon-cloud/issues) for a list of proposed features (and known issues).
