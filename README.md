@@ -80,7 +80,7 @@ Then use either of the components:
 
 [Code Sandbox](https://codesandbox.io/s/react-icon-cloud-1xr9h)
 
-[Dynamic Icon Import With Next.js SSR](https://github.com/tsAppDevelopment/portfolio-v2-nextjs/blob/main/src/components/skill_cloud.tsx)
+[Dynamically Import Icons With Next.js SSR](https://github.com/tsAppDevelopment/portfolio-v2-nextjs/blob/main/src/components/skill_cloud.tsx)
 ## Roadmap
 
 See the [open issues](https://github.com/tsappdevelopment/react-icon-cloud/issues) for a list of proposed features (and known issues).
