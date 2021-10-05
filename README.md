@@ -67,11 +67,11 @@ import {IconTag, Cloud, IconCloud, Tag, TagCanvasOptions } from 'react-icon-clou
 Then use either of the components:
 
 ```tsx
-  <Cloud id={'word'} type={'word'} tags={tags1} key={v4()} tagCanvasOptions={options1}/>
+  <Cloud type={'word'} tags={tags1} tagCanvasOptions={options1}/>
 ```
 
 ```tsx
-  <IconCloud id={'icon'} minContrastRatio={1} iconSize={50} backgroundHexColor={'#fff'} fallbackHexColor={'#000'} tags={tags3} key={v4()} tagCanvasOptions={options1}/>
+  <IconCloud minContrastRatio={1} iconSize={50} backgroundHexColor={'#fff'} fallbackHexColor={'#000'} tags={tags3} tagCanvasOptions={options1}/>
 ```
 
 

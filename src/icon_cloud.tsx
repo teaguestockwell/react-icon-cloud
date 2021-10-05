@@ -41,7 +41,6 @@ export const getTags = (
 
 export const IconCloud = (
   {
-    id,
     tagCanvasOptions = {},
     tags = [],
     canvasContainerStyle: innerStyle = {},
@@ -65,7 +64,6 @@ export const IconCloud = (
   })
 
   return <Cloud
-    id={id}
     tagCanvasOptions={tagCanvasOptions}
     tags={tags2}
     canvasContainerStyle={innerStyle}

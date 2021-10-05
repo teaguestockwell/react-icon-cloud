@@ -1,13 +1,13 @@
-import React, { useRef } from 'react'
-import {useVisible} from 'react-hooks-visible'
+import React from 'react'
 import {tagCanvasString} from './tag_canvas_string'
 import * as Types from './types/types'
+import {v4} from 'uuid'
+import {useVisible} from 'react-hooks-visible'
 
 let isTagCanvasScripLoaded = false
 
-export const Cloud = (
+const CloudWrapped = (
   {
-    id,
     tagCanvasOptions = {},
     tags = [],
     canvasContainerStyle = {},
@@ -18,12 +18,12 @@ export const Cloud = (
   }: Types.CloudProps
   
 ) => {
-  const state = useRef({
-    canvasContainerId: 'canvas-container-' + id,
-    canvasId: 'canvas-' + id,
+  const [state] = React.useState({
+    canvasContainerId: 'canvas-container-' + v4(),
+    canvasId: 'canvas-' + v4(),
     hasStarted: false,
-  }).current
-  const [ref, visible] = useVisible((vi: number) => vi > 0.3)
+  })
+    const [ref, visible] = useVisible((vi: number) => vi > 0.3)
 
     React.useEffect(() => {
        // load global instance of tag canvas script
@@ -132,4 +132,8 @@ export const Cloud = (
       </div>
     </div>
   )
+}
+
+export const Cloud = (props: Types.CloudProps) => {
+  return <CloudWrapped {...props} key={v4()}/>
 }

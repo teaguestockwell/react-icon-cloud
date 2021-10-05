@@ -8,5 +8,4 @@ export interface CloudProps {
   canvasWidth?: number
   canvasHeight?: number
   canvasStyle?: React.CSSProperties,
-  id: string | number
 }
