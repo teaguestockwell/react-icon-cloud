@@ -18,11 +18,11 @@ const CloudWrapped = (
   }: Types.CloudProps
   
 ) => {
-  const [state] = React.useState({
+  const state = React.useRef({
     canvasContainerId: 'canvas-container-' + v4(),
     canvasId: 'canvas-' + v4(),
     hasStarted: false,
-  })
+  }).current
     const [ref, visible] = useVisible((vi: number) => vi > 0.3)
 
     React.useEffect(() => {
