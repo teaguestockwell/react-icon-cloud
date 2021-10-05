@@ -2,7 +2,7 @@
 
 [license-shield]: https://img.shields.io/github/license/tsAppDevelopment/react-icon-cloud.svg
 
-[license-url]: https://github.com/tsAppDevelopment/react-icon-cloud/blob/master/licence.txt
+[license-url]: https://github.com/tsAppDevelopment/react-icon-cloud/blob/master/LICENSE
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?logo=linkedin&colorB=555
 
