@@ -87,7 +87,7 @@ See the [open issues](https://github.com/tsappdevelopment/react-icon-cloud/issue
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+See `LICENSE` for more information.
 
 ## Contact
 
