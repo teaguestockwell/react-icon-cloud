@@ -33,12 +33,8 @@ export const renderSimpleIcon = (
 
     const a = {
       key: nanoid(),
-      href: icon.source,
       title: icon.title,
-      target: '_blank',
-      rel: 'noopener',
       style: {cursor: 'pointer'},
-      onClick: (e:any) => {if(!aProps.href) e.preventDefault()},
       ...aProps,
     }
 

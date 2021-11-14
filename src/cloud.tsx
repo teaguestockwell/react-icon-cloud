@@ -22,12 +22,13 @@ const CloudWrapped = (
     options = {},
     containerProps = {},
     canvasProps = {},
-    children
+    children,
+    id = nanoid(),
   }: ICloud
 ) => {
   const state = React.useRef({
-    canvasContainerId: 'canvas-container-' + nanoid(),
-    canvasId: 'canvas-' + nanoid(),
+    canvasContainerId: 'canvas-container-' + id,
+    canvasId: 'canvas-' + id,
     hasStarted: false,
   }).current
   const [mounted, setMounted] = React.useState(false)
