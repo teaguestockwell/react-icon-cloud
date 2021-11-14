@@ -1,8 +1,8 @@
 import React from 'react'
 import {tagCanvasString} from './tag_canvas_string'
 import * as Types from './types/types'
-import {v4} from 'uuid'
-import {useVisible} from 'react-hooks-visible'
+import { nanoid } from 'nanoid'
+import { UseInViewport } from './use_in_viewport'
 
 let isTagCanvasScripLoaded = false
 
@@ -19,11 +19,10 @@ const CloudWrapped = (
   
 ) => {
   const state = React.useRef({
-    canvasContainerId: 'canvas-container-' + v4(),
-    canvasId: 'canvas-' + v4(),
+    canvasContainerId: 'canvas-container-' + nanoid(),
+    canvasId: 'canvas-' + nanoid(),
     hasStarted: false,
   }).current
-    const [ref, visible] = useVisible((vi: number) => vi > 0.3)
 
     React.useEffect(() => {
        // load global instance of tag canvas script
@@ -59,19 +58,19 @@ const CloudWrapped = (
     },[])
 
     // it will not load canvas animations when its outside the viewport
-    React.useEffect(() => {
+    const onVisibilityChange = (isVisible: boolean) => {
       if (state.hasStarted) {
-        if (visible) {
+        if (isVisible) {
           eval(`TagCanvas.Resume('${state.canvasId}')`)
         } else {
           eval(`TagCanvas.Pause('${state.canvasId}')`)
         }
       }
-    }, [visible, state.hasStarted])
+    }
 
   const getTag = (
     {
-      id,
+      id = nanoid(),
       title,
       href, 
       imgWidth = 32,
@@ -86,8 +85,12 @@ const CloudWrapped = (
         key={id} 
         href={href} 
         title={title}
+        target={href ? '_blank' : undefined}
+        rel={href ? 'noopener' : undefined}
         onClick={e => {
-          e.preventDefault()
+          if(!href){ 
+            e.preventDefault()
+          }
           onClick({
             id,
             title,
@@ -116,7 +119,7 @@ const CloudWrapped = (
   }
 
   return (
-    <div ref={ref as any}>
+    <UseInViewport cb={onVisibilityChange}>
       <div
         id={state.canvasContainerId}
         style={canvasContainerStyle}
@@ -130,10 +133,10 @@ const CloudWrapped = (
           {tags.map(getTag)}
         </canvas>
       </div>
-    </div>
+    </UseInViewport>
   )
 }
 
 export const Cloud = (props: Types.CloudProps) => {
-  return <CloudWrapped {...props} key={v4()}/>
+  return <CloudWrapped {...props} key={nanoid()}/>
 }
