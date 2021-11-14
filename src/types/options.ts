@@ -95,4 +95,4 @@ interface Options {
   readonly zoomStep: number
 }
 
-export type TagCanvasOptions = Partial<Options> | undefined
+export type IOptions = Partial<Options> | undefined

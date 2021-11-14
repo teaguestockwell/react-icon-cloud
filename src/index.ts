@@ -1,3 +1,5 @@
 export * from './cloud'
-export * from './icon_cloud'
-export * from './types/types'
+export * from './renderers/simpleIcon'
+export * from './renderers/img'
+export * from './renderers/text'
+export * from './types/cloud'

@@ -1,5 +1,0 @@
-export * from './tag_canvas_options'
-export * from './tag'
-export * from './cloud_props'
-export * from './icon_cloud_props'
-export * from './icon_tag'
