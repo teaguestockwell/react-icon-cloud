@@ -4,7 +4,17 @@ import { nanoid } from 'nanoid'
 import { UseInViewport } from './use_in_viewport'
 import {ICloud} from './types/cloud'
 
-let isTagCanvasScripLoaded = false
+let isScriptLoaded = false
+
+const tr = (fn: () => void) => {
+  try{
+    fn()
+  } catch(e){
+    if(process.env.NODE_ENV === 'development'){
+      console.error(e)
+    }
+  }
+}
 
 const CloudWrapped = (
   {
@@ -21,50 +31,51 @@ const CloudWrapped = (
   }).current
 
     React.useEffect(() => {
-       // load global instance of tag canvas script
-       if(!isTagCanvasScripLoaded){
-        eval(tagCanvasString)
-        isTagCanvasScripLoaded = true
-      }
+      return () => tr(() => {
+        eval(`TagCanvas.Delete('${state.canvasId}')`)
+      })
     },[])
 
-    // start the local instance of tag canvas
-    React.useEffect(() => {
-      const supportsTouch = 'ontouchstart' in window || navigator.maxTouchPoints
-
-      const ops = {
-        dragControl: supportsTouch ? true : false,
-        maxSpeed: supportsTouch ? 0.01 : 0.05,
-        textFont: null,
-        textColour: null,
-        ...options
-      }
-
-      try{
-        eval(`TagCanvas.Start('${state.canvasId}', null, ${JSON.stringify(ops)})`)
-        state.hasStarted = true
-      } catch (e){
-        let el: HTMLElement | null = document.getElementById(state.canvasContainerId)
-
-        if(el){
-          el.style.display = 'none'
-        }
-      }
-
-      return () => eval(`TagCanvas.Delete('${state.canvasId}')`)
-
-    },[])
+    const supportsTouch = typeof window !== 'undefined' ? 'ontouchstart' in window || navigator.maxTouchPoints : false
+    const ops = JSON.stringify({
+      dragControl: supportsTouch ? true : false,
+      maxSpeed: supportsTouch ? 0.01 : 0.05,
+      textFont: null,
+      textColour: null,
+      ...options
+    })
 
     // it will not load canvas animations when its outside the viewport
-    const onVisibilityChange = (isVisible: boolean) => {
-      if (state.hasStarted) {
-        if (isVisible) {
+    const onVisibilityChange = (isVisible: boolean) => tr(() => {
+      if(isVisible){
+
+        if(!isScriptLoaded){
+          eval(tagCanvasString)
+          isScriptLoaded = true
+        }
+
+        if(state.hasStarted){
           eval(`TagCanvas.Resume('${state.canvasId}')`)
         } else {
+          try{
+            eval(`TagCanvas.Start('${state.canvasId}', null, ${ops})`)
+            state.hasStarted = true
+          } catch (e) {
+            const el = document.getElementById(state.canvasContainerId)
+            
+            if(el){
+              el.style.display = 'none' 
+            }
+
+            throw e
+          }
+        }
+      } else {
+        if(state.hasStarted){
           eval(`TagCanvas.Pause('${state.canvasId}')`)
         }
       }
-    }
+    })
 
   return (
     <UseInViewport cb={onVisibilityChange}>

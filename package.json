@@ -1,5 +1,5 @@
 {
-  "version": "2.0.6-canary.1",
+  "version": "3.0.0",
   "description": "A React component for rendering an interactive img or word cloud on canvas",
   "license": "MIT",
   "main": "dist/index.js",
