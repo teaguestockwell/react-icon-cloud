@@ -10,8 +10,9 @@ const tr = (fn: () => void) => {
   try{
     fn()
   } catch(e){
-    if(process.env.NODE_ENV === 'development'){
-      console.error(e)
+    try{
+      fn()
+    } catch(e){
     }
   }
 }
@@ -29,8 +30,10 @@ const CloudWrapped = (
     canvasId: 'canvas-' + nanoid(),
     hasStarted: false,
   }).current
+  const [mounted, setMounted] = React.useState(false)
 
     React.useEffect(() => {
+      setMounted(true)
       return () => tr(() => {
         eval(`TagCanvas.Delete('${state.canvasId}')`)
       })
@@ -47,7 +50,7 @@ const CloudWrapped = (
 
     // it will not load canvas animations when its outside the viewport
     const onVisibilityChange = (isVisible: boolean) => tr(() => {
-      if(isVisible){
+      if(isVisible && mounted){
 
         if(!isScriptLoaded){
           eval(tagCanvasString)

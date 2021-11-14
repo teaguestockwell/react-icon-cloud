@@ -60,18 +60,45 @@ To get a local copy up and running follow these simple steps.
 npm i react-icon-cloud
 ```
 
-```typescript
-import {IconTag, Cloud, IconCloud, Tag, TagCanvasOptions } from 'react-icon-cloud'
-```
-
-Then use either of the components:
-
 ```tsx
-  <Cloud type={'word'} tags={tags1} tagCanvasOptions={options1}/>
-```
+import {Cloud, renderSimpleIcon, renderImage, renderText, ICloud} from 'react-icon-cloud'
+import jsIcon from "simple-icons/icons/javascript";
 
-```tsx
-  <IconCloud minContrastRatio={1} iconSize={50} backgroundHexColor={'#fff'} fallbackHexColor={'#000'} tags={tags3} tagCanvasOptions={options1}/>
+const iconTag = renderSimpleIcon({
+  icon: jsIcon,
+})
+
+const imgTag = renderImg({
+  imgProps: {
+    src: 'https://openmoji.org/data/color/svg/1F44B.svg',
+    alt: 'Globe',
+    width: 100,
+    height: 100
+  },
+  aProps: {
+    href: 'https://openmoji.org',
+    target: '_blank',
+    rel: 'noreferrer',
+  }
+})
+
+const textTag = renderText({
+  text: 'hello'
+})
+
+const containerProps: ICloud['containerProps'] = {}
+const canvasProps: ICloud['canvasProps'] = {}
+const cloudProps: ICloud['options'] = {}
+
+<Cloud 
+    containerProps={containerProps} 
+    canvasProps={canvasProps}
+    options={options}
+  >
+  {iconTag}
+  {imgTag}
+  {textTag}
+</Cloud>
 ```
 
 
