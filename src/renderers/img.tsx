@@ -1,5 +1,5 @@
 import React from "react"
-import { nanoid } from "nanoid"
+import { v4 } from "uuid"
 
 export const renderImg = (
   {
@@ -11,7 +11,7 @@ export const renderImg = (
   }
 ) => {
   const a = {
-    key: nanoid(),
+    key: v4(),
     style: {cursor: 'pointer'},
     onClick: (e:any) => {if(!aProps.href) e.preventDefault()},
     ...aProps,

@@ -1,6 +1,6 @@
 import React from 'react'
 import {hex2contrast, hex2rgb} from '@csstools/convert-colors'
-import { nanoid } from 'nanoid'
+import { v4 } from 'uuid'
 
 export const renderSimpleIcon = (
   {
@@ -32,7 +32,7 @@ export const renderSimpleIcon = (
     const imgSrc = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" style="fill: rgb(${r}, ${g}, ${b});" viewBox="0 0 24 24" height="${size}px" width="${size}px"> <title>${icon.title}</title> <path d="${icon.path}"></path> </svg>`
 
     const a = {
-      key: nanoid(),
+      key: v4(),
       title: icon.title,
       style: {cursor: 'pointer'},
       ...aProps,

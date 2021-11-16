@@ -1,6 +1,6 @@
 import React from 'react'
 import {tagCanvasString} from './tag_canvas_string'
-import { nanoid } from 'nanoid'
+import { v4 } from 'uuid'
 import { UseInViewport } from './use_in_viewport'
 import {ICloud} from './types/cloud'
 
@@ -23,7 +23,7 @@ const CloudWrapped = (
     containerProps = {},
     canvasProps = {},
     children,
-    id = nanoid(),
+    id = v4(),
   }: ICloud
 ) => {
   const state = React.useRef({
@@ -102,5 +102,5 @@ const CloudWrapped = (
 }
 
 export const Cloud = (props: ICloud) => {
-  return <CloudWrapped {...props} key={nanoid()}/>
+  return <CloudWrapped {...props} key={v4()}/>
 }

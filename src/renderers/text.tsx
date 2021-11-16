@@ -1,4 +1,4 @@
-import { nanoid } from "nanoid"
+import { v4 } from "uuid"
 import React from "react"
 
 export const renderText = (
@@ -11,7 +11,7 @@ export const renderText = (
   }
 ) => {
   const a = {
-    key: nanoid(),
+    key: v4(),
     style: {cursor: 'pointer'},
     onClick: (e:any) => {if(!aProps.href) e.preventDefault()},
     ...aProps,

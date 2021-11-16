@@ -77,6 +77,7 @@ export default function App() {
       href: undefined,
       target: undefined,
       rel: undefined,
+      onClick: (e:any) => e.preventDefault(),
     }
   }))
 
