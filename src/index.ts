@@ -1,5 +1,6 @@
-export * from './cloud'
+export * from './renderers/cloud'
 export * from './renderers/simpleIcon'
 export * from './renderers/img'
 export * from './renderers/text'
 export * from './types/cloud'
+export * from './types/options'

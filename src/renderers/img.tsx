@@ -1,5 +1,5 @@
 import React from "react"
-import { v4 } from "uuid"
+import { guid } from "../utils/guid"
 
 export const renderImg = (
   {
@@ -11,7 +11,7 @@ export const renderImg = (
   }
 ) => {
   const a = {
-    key: v4(),
+    key: guid(),
     style: {cursor: 'pointer'},
     onClick: (e:any) => {if(!aProps.href) e.preventDefault()},
     ...aProps,

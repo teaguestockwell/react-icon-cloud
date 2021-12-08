@@ -1,4 +1,4 @@
-import { v4 } from "uuid"
+import { guid } from "../utils/guid"
 import React from "react"
 
 export const renderText = (
@@ -11,7 +11,7 @@ export const renderText = (
   }
 ) => {
   const a = {
-    key: v4(),
+    key: guid(),
     style: {cursor: 'pointer'},
     onClick: (e:any) => {if(!aProps.href) e.preventDefault()},
     ...aProps,

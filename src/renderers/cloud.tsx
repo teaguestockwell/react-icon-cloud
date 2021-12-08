@@ -1,8 +1,8 @@
 import React from 'react'
-import {tagCanvasString} from './tag_canvas_string'
-import { v4 } from 'uuid'
-import { UseInViewport } from './use_in_viewport'
-import {ICloud} from './types/cloud'
+import {tagCanvasString} from '../lib/tag_canvas_string'
+import { guid } from '../utils/guid'
+import { UseInViewport } from '../utils/use_in_viewport'
+import {ICloud} from '../types/cloud'
 
 let isScriptLoaded = false
 
@@ -23,7 +23,7 @@ const CloudWrapped = (
     containerProps = {},
     canvasProps = {},
     children,
-    id = v4(),
+    id = guid(),
   }: ICloud
 ) => {
   const state = React.useRef({
@@ -102,5 +102,5 @@ const CloudWrapped = (
 }
 
 export const Cloud = (props: ICloud) => {
-  return <CloudWrapped {...props} key={v4()}/>
+  return <CloudWrapped {...props} key={guid()}/>
 }
