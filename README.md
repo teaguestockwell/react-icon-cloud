@@ -1,8 +1,8 @@
 [![license-shield]][license-url] [![linkedin-shield]][linkedin-url] ![size-url] ![size-url2] [![npm-v]][npm-url] [![gh-shield]][gh-url]
 
-[license-shield]: https://img.shields.io/github/license/tsAppDevelopment/react-icon-cloud.svg
+[license-shield]: https://img.shields.io/github/license/teaguestockwell/react-icon-cloud.svg
 
-[license-url]: https://github.com/tsAppDevelopment/react-icon-cloud/blob/master/LICENSE
+[license-url]: https://github.com/teaguestockwell/react-icon-cloud/blob/master/LICENSE
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?logo=linkedin&colorB=555
 
@@ -18,12 +18,12 @@
 
 [gh-shield]: https://img.shields.io/badge/-GitHub-black.svg?logo=github&colorB=555
 
-[gh-url]: https://github.com/tsAppDevelopment/react-icon-cloud
+[gh-url]: https://github.com/teaguestockwell/react-icon-cloud
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/tsAppDevelopment/react-icon-cloud">
+  <a href="https://github.com/teaguestockwell/react-icon-cloud">
     <img src="https://user-images.githubusercontent.com/71202372/131417256-58058879-f14c-4c03-9bdf-03bd1c80f25d.gif" alt="Logo" width="80%" >
   </a>
 
@@ -33,7 +33,7 @@
     React component for rendering an interactive img or word cloud on canvas
     <br />
     <a href="https://codesandbox.io/s/react-icon-cloud-1xr9h">Code Sandbox</a>
-    <a href="https://github.com/tsAppDevelopment/react-icon-cloud/issues">Report Bug</a>
+    <a href="https://github.com/teaguestockwell/react-icon-cloud/issues">Report Bug</a>
   </p>
 </p>
 
@@ -107,7 +107,7 @@ const cloudProps: ICloud['options'] = {}
 
 [Code Sandbox](https://codesandbox.io/s/react-icon-cloud-1xr9h)
 
-[Dynamically Import Icons With Next.js SSR](https://github.com/tsAppDevelopment/portfolio-v2-nextjs/blob/main/src/components/skill_cloud.tsx)
+[Dynamically Import Icons With Next.js SSR](https://github.com/teaguestockwell/portfolio-v2-nextjs/blob/main/src/components/skill_cloud.tsx)
 ## Roadmap
 
 See the [open issues](https://github.com/tsappdevelopment/react-icon-cloud/issues) for a list of proposed features (and known issues).

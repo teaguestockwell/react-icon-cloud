@@ -1,5 +1,5 @@
 {
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "A React component for rendering an interactive img or word cloud on canvas",
   "license": "MIT",
   "main": "dist/index.js",
@@ -56,12 +56,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/tsAppDevelopment/react-icon-cloud"
+    "url": "https://github.com/teaguestockwell/react-icon-cloud"
   },
   "bugs": {
-    "url": "https://github.com/tsAppDevelopment/react-icon-cloud/issues"
+    "url": "https://github.com/teaguestockwell/react-icon-cloud/issues"
   },
-  "homepage": "https://github.com/tsAppDevelopment/react-icon-cloud",
+  "homepage": "https://github.com/teaguestockwell/react-icon-cloud",
   "module": "dist/react-icon-cloud.esm.js",
   "size-limit": [
     {
