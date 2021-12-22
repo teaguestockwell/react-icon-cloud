@@ -103,29 +103,30 @@ const cloudProps: ICloud['options'] = {}
 
 # Props
 ## Cloud
-|      name      |                 type                 | default |                           description                           |
-|:--------------:|:------------------------------------:|:-------:|:---------------------------------------------------------------:|
-| canvasProps    | HTMLAttributes < HTMLCanvasElement > | {}      | Attributes that will be passed to the underlying canvas element |
-| children       | Tag[]                                | []      | Tags rendered using the provided renderers                      |
-| containerProps | HTMLAttributes < HTMLDivElement >    | {}      | Attributes passed to the root div element                       |
-| id             | string \| number                     | uuid    | Should be provided when using SSR                               |
-| options        | IOptions                             | {}      | https://www.goat1000.com/tagcanvas-options.php                  |
+|      name      |                 type                              | default |                           description                           |
+|:--------------:|:-------------------------------------------------:|:-------:|:---------------------------------------------------------------:|
+| canvasProps    | HTMLAttributes < HTMLCanvasElement > \| undefined | {}      | Attributes that will be passed to the underlying canvas element |
+| children       | Tag[]                                             | []      | Tags rendered using the provided renderers                      |
+| containerProps | HTMLAttributes < HTMLDivElement >  \| undefined   | {}      | Attributes passed to the root div element                       |
+| id             | string \| number \| undefined                                  | uuid    | Should be provided when using SSR                               |
+| options        | IOptions \| undefined                             | {}      | https://www.goat1000.com/tagcanvas-options.php                  |
 ## renderImg
 Used to create a tag for the Cloud component
 |   name   |                type                             | default |                     description                    |
 |:--------:|:-----------------------------------------------:|:-------:|:--------------------------------------------------:|
-|  aProps  | HTMLAttributes <HTMLAnchorElement> \| undefined | {}      | Attributes passed to the underlying anchor element |
-| imgProps | HTMLAttributes  <HTMLImageElement> \| undefined | {}      | Attributes passed to the underlying img element    |
+|  aProps  | HTMLAttributes < HTMLAnchorElement > \| undefined | {}      | Attributes passed to the underlying anchor element |
+| imgProps | HTMLAttributes  < HTMLImageElement > \| undefined | {}      | Attributes passed to the underlying img element    |
 ## renderSimpleIcon
 Used to create a tag for the Cloud component
 |       name       |                       type                      |  default  |                                                                           description                                                                          |
 |:----------------:|:-----------------------------------------------:|:---------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| aProps           | HTMLAttributes <HTMLAnchorElement> \| undefined | {}        | Attributes passed to the underlying anchor element                                                                                                             |
+| aProps           | HTMLAttributes < HTMLAnchorElement > \| undefined | {}        | Attributes passed to the underlying anchor element                                                                                                             |
 | bgHex            | string \| undefined                             | '#fff'    | The string hex of the background the icon will be rendered on. Ex: '#fff'. Used to determine if the min contrast ratio for the icons default color will be met |
 | fallbackHex      | string \| undefined                             | '#000'    | The color of the icon if the minContrastRatio is not met Ex: '#000'                                                                                            |
-| icon             | any                                             | undefined | The simple icon object you would like to render. Ex: import icon from "simple-icons/icons/javascript";                                                         |
-| minContrastRatio | number                                          | 1         | 0 - 21 The min contrast ratio between icon and bgHex before the fallbackHex will be used for the icon color                                                    |
-| size             | number                                          | 42        | The size in px of the icon                                                                                                                                     |
+| icon             | any                                             | undefined | The simple icon object you would like to render. Ex: import icon from "simple-icons/icons/javascript";
+| imgProps | HTMLAttributes  < HTMLImageElement > \| undefined | {}      | Attributes passed to the underlying img element    |                                                         |
+| minContrastRatio | number \| undefined                             | 1         | 0 - 21 The min contrast ratio between icon and bgHex before the fallbackHex will be used for the icon color                                                    |
+| size             | number \| undefined                             | 42        | The size in px of the icon                                                                                                                                     |
 
 ## renderText
 Used to create a tag for the Cloud component
