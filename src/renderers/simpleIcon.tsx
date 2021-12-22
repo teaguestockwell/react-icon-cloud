@@ -2,23 +2,34 @@ import React from 'react'
 import {hex2contrast, hex2rgb} from '@csstools/convert-colors'
 import { guid } from '../utils/guid'
 
+/**
+ * Used to create a tag for the Cloud component
+ * @param options.aProps Attributes passed to the underlying anchor element
+ * @param options.bgHex The string hex of the background the icon will be rendered on. Ex: '#fff'. Used to determine if the min contrast ratio for the icons default color will be met
+ * @param options.fallbackHex The color of the icon if the minContrastRatio is not met Ex: '#000'
+ * @param options.icon The simple icon object you would like to render. Ex: import icon from "simple-icons/icons/javascript";
+ * @param options.imgProps Attributes passes to the underlying img element
+ * @param options.minContrastRatio 0 - 21 The min contrast ratio between icon and bgHex before the fallbackHex will be used for the icon color 
+ * @param options.size The size in px of the icon
+ * @returns A component that can be rendered as a tag inside the Cloud component
+ */
 export const renderSimpleIcon = (
   {
-    icon,
-    bgHex = '#fff',
-    minContrastRatio = 1,
-    fallbackHex = '#000',
     aProps = {},
+    bgHex = '#fff',
+    fallbackHex = '#000',
+    icon,
     imgProps = {},
+    minContrastRatio = 1,
     size = 42,
   }: 
   {
-    icon:any,
-    bgHex?:string
-    minContrastRatio?:number
-    fallbackHex?:string
     aProps?:  React.DetailedHTMLProps<React.AllHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>
+    bgHex?:string
+    fallbackHex?:string
+    icon:any,
     imgProps?: React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>
+    minContrastRatio?:number
     size?:number
   }
   ) => {

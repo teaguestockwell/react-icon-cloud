@@ -1,5 +1,6 @@
-/** https://www.goat1000.com/tagcanvas-options.php */ 
-
+/**
+ * https://www.goat1000.com/tagcanvas-options.php 
+ */
 interface Options {
   readonly activateAudio: string
   readonly activeCursor: string 

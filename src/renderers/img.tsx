@@ -1,6 +1,12 @@
 import React from "react"
 import { guid } from "../utils/guid"
 
+/**
+ * Used to create a tag for the Cloud component
+ * @param options.aProps Attributes passed to the underlying anchor element
+ * @param options.imgProps Attributes passes to the underlying img element
+ * @returns A tag component to be rendered as a child of the Cloud component
+ */
 export const renderImg = (
   {
     aProps = {},

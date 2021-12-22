@@ -1,11 +1,17 @@
 import React from 'react';
 import { IOptions } from './options'
 
+/**
+ * @param canvasProps Attributes passed to the underlying canvas element
+ * @param children Tags rendered using the provided renderers
+ * @param containerProps Attributes passed to the root div element
+ * @param id Should be provided when using SSR
+ * @param options https://www.goat1000.com/tagcanvas-options.php
+ */
 export type ICloud = {
-  // an id should be provided when the cloud is server side rendered then hydrated on the client
-  id?: string | number,
-  children: React.ReactFragment,
-  options?: IOptions
-  containerProps?: React.HTMLAttributes<HTMLDivElement>
   canvasProps?: React.HTMLAttributes<HTMLCanvasElement>
+  children: React.ReactFragment,
+  containerProps?: React.HTMLAttributes<HTMLDivElement>
+  id?: string | number,
+  options?: IOptions
 }
