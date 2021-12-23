@@ -88,7 +88,7 @@ const textTag = renderText({
 
 const containerProps: ICloud['containerProps'] = {}
 const canvasProps: ICloud['canvasProps'] = {}
-const cloudProps: ICloud['options'] = {}
+const options: ICloud['options'] = {}
 
 <Cloud 
     containerProps={containerProps} 
