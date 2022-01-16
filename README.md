@@ -38,7 +38,7 @@
 </p>
 
 ## About
-An interactive 3D tag cloud component for React that renders text and images into a interactive 3D tag cloud
+An interactive 3D tag cloud component for React that renders text, images, and simple icons into a interactive 3D tag cloud
 
 - Built in support for rendering a cloud of [Simple Icons](https://github.com/simple-icons/simple-icons) with custom fallback color for poor contrast
 
@@ -53,7 +53,7 @@ An interactive 3D tag cloud component for React that renders text and images int
 
 ## Getting Started
 
-To get a local copy up and running follow these simple steps.
+To get a local copy up and running follow these simple steps or see the [Code Sandbox](https://codesandbox.io/s/react-icon-cloud-1xr9h).
 
 
 ```sh
@@ -61,44 +61,42 @@ npm i react-icon-cloud
 ```
 
 ```tsx
-import {Cloud, renderSimpleIcon, renderImage, renderText, ICloud} from 'react-icon-cloud'
-import jsIcon from "simple-icons/icons/javascript";
+import React from 'react'
+import {Cloud, renderSimpleIcon} from 'react-icon-cloud'
+import js from "simple-icons/icons/javascript"
+import nextjs from "simple-icons/icons/nextdotjs"
 
-const iconTag = renderSimpleIcon({
-  icon: jsIcon,
+const icons = [js,nextjs].map((icon) => {
+  return renderSimpleIcon({
+    icon,
+    size: 42,
+    aProps: {
+      onClick: (e: any) => e.preventDefault()
+    }
+  })
 })
 
-const imgTag = renderImg({
-  imgProps: {
-    src: 'https://openmoji.org/data/color/svg/1F44B.svg',
-    alt: 'Globe',
-    width: 100,
-    height: 100
-  },
-  aProps: {
-    href: 'https://openmoji.org',
-    target: '_blank',
-    rel: 'noreferrer',
-  }
-})
-
-const textTag = renderText({
-  text: 'hello'
-})
-
-const containerProps: ICloud['containerProps'] = {}
-const canvasProps: ICloud['canvasProps'] = {}
-const options: ICloud['options'] = {}
-
-<Cloud 
-    containerProps={containerProps} 
-    canvasProps={canvasProps}
-    options={options}
-  >
-  {iconTag}
-  {imgTag}
-  {textTag}
-</Cloud>
+const IconCloud = () => {
+  return <Cloud>
+    {icons}
+    <a>
+      hello world
+    </a>
+    <a
+      href="https://emojipedia.org/globe-showing-americas/"
+      title="Visual Studio Code"
+      target="_blank"
+      rel="noopener"
+    >
+      <img
+        height="42"
+        width="42"
+        alt="Visual Studio Code"
+        src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/globe-showing-americas_1f30e.png"
+      />
+    </a>
+  </Cloud>
+}
 ```
 
 # Props
@@ -110,12 +108,6 @@ const options: ICloud['options'] = {}
 | containerProps | HTMLAttributes < HTMLDivElement >  \| undefined   | {}      | Attributes passed to the root div element                       |
 | id             | string \| number \| undefined                                  | uuid    | Should be provided when using SSR                               |
 | options        | IOptions \| undefined                             | {}      | https://www.goat1000.com/tagcanvas-options.php                  |
-## renderImg
-Used to create a tag for the Cloud component
-|   name   |                type                             | default |                     description                    |
-|:--------:|:-----------------------------------------------:|:-------:|:--------------------------------------------------:|
-|  aProps  | HTMLAttributes < HTMLAnchorElement > \| undefined | {}      | Attributes passed to the underlying anchor element |
-| imgProps | HTMLAttributes  < HTMLImageElement > \| undefined | {}      | Attributes passed to the underlying img element    |
 ## renderSimpleIcon
 Used to create a tag for the Cloud component
 |       name       |                       type                      |  default  |                                                                           description                                                                          |
@@ -126,16 +118,7 @@ Used to create a tag for the Cloud component
 | icon             | any                                             | undefined | The simple icon object you would like to render. Ex: import icon from "simple-icons/icons/javascript";
 | imgProps | HTMLAttributes  < HTMLImageElement > \| undefined | {}      | Attributes passed to the underlying img element    |                                                         |
 | minContrastRatio | number \| undefined                             | 1         | 0 - 21 The min contrast ratio between icon and bgHex before the fallbackHex will be used for the icon color                                                    |
-| size             | number \| undefined                             | 42        | The size in px of the icon                                                                                                                                     |
-
-## renderText
-Used to create a tag for the Cloud component
-|  name  |                        type                       |  default  |                           description                          |
-|:------:|:-------------------------------------------------:|:---------:|:--------------------------------------------------------------:|
-| aProps | HTMLAttributes < HTMLAnchorElement > \| undefined | {}        | Attributes passed to the underlying anchor element of the icon |
-| text   | string                                            | undefined | The text to render                                             |
-
-
+| size             | number \| undefined                             | 42        | The size in px of the icon                                                                                                                                     |                                         |
 ## Examples
 [Tag Canvas Options](https://www.goat1000.com/tagcanvas-options.php)
 
