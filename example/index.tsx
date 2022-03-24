@@ -22,14 +22,13 @@ const IconCloud = () => {
     </a>
     <a
       href="https://emojipedia.org/globe-showing-americas/"
-      title="Visual Studio Code"
       target="_blank"
       rel="noopener"
     >
       <img
         height="42"
         width="42"
-        alt="Visual Studio Code"
+        alt="A globe"
         src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/globe-showing-americas_1f30e.png"
       />
     </a>
