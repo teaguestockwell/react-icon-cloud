@@ -8,7 +8,7 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "simple-icons": "^5.12.0"
+    "simple-icons": "^6.19.0"
   },
   "alias": {
     "react": "../node_modules/react",
@@ -18,7 +18,7 @@
   "devDependencies": {
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.8.4",
-    "parcel": "1.12.3",
+    "parcel": "^2.5.0",
     "typescript": "^3.4.5"
   }
 }

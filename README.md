@@ -60,6 +60,7 @@ To get a local copy up and running follow these simple steps or see the [Code Sa
 npm i react-icon-cloud
 ```
 
+## Static icon slugs
 ```tsx
 import React from 'react'
 import {Cloud, renderSimpleIcon} from 'react-icon-cloud'
@@ -98,6 +99,47 @@ const IconCloud = () => {
 }
 ```
 
+## Dynamic icon slugs
+```tsx
+import React from 'react'
+import {Cloud, renderSimpleIcon, fetchSimpleIcons, SimpleIcon} from 'react-icon-cloud'
+
+const useIcons = (slugs: string[]) => {
+  const [icons, setIcons] = React.useState<SimpleIcon[]>()
+  React.useEffect(() => {fetchSimpleIcons(slugs).then(setIcons)}, [])
+
+  if (icons) {
+    return icons.map((icon) => renderSimpleIcon({
+      icon,
+      size: 42,
+      aProps: {
+        onClick: (e: any) => e.preventDefault()
+      }
+    }))
+  }
+  
+  return <a>Loading</a>
+}
+
+const slugs = [
+  'amazonaws',
+  'android',
+  'androidstudio',
+  'antdesign',
+  'typescript',
+  'vercel',
+  'visualstudiocode'
+]
+
+const DynamicIconCloud = () => {
+  const icons = useIcons(slugs)
+
+  return <Cloud>
+    {icons}
+  </Cloud>
+}
+```
+
 # Props
 ## Cloud
 |      name      |                 type                              | default |                           description                           |
@@ -117,7 +159,12 @@ Used to create a tag for the Cloud component
 | icon             | any                                             | undefined | The simple icon object you would like to render. Ex: import icon from "simple-icons/icons/javascript";
 | imgProps | HTMLAttributes  < HTMLImageElement > \| undefined | {}      | Attributes passed to the underlying img element    |                                                         |
 | minContrastRatio | number \| undefined                             | 1         | 0 - 21 The min contrast ratio between icon and bgHex before the fallbackHex will be used for the icon color                                                    |
-| size             | number \| undefined                             | 42        | The size in px of the icon                                                                                                                                     |                                         |
+| size             | number \| undefined                             | 42        | The size in px of the icon                                                                                                                                     |
+## fetchSimpleIcons
+Used when you cant statically import simple icons during built time. Calling this will use `fetch` to get icons for each provided slug.
+|       name       |                       type                      |  default  |                                                                           description                                                                          |
+|:----------------:|:-----------------------------------------------:|:---------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| slugs           | string[]                                         |           | Slugs to fetch svgs and colors for. The return icons may be passed to renderSimpleIcon                                                                         |    
 ## Examples
 [Tag Canvas Options](https://www.goat1000.com/tagcanvas-options.php)
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import {hex2contrast, hex2rgb} from '@csstools/convert-colors'
 import { guid } from '../utils/guid'
+import { addHash } from '../utils/add_hash'
 
 /**
  * Used to create a tag for the Cloud component
@@ -33,7 +34,6 @@ export const renderSimpleIcon = (
     size?:number
   }
   ) => {
-    const addHash = (color:string) => color[0] === '#' ? color : `#${color}`
     const originalHex =  addHash(icon.hex)
     const bgHexHash = addHash(bgHex)
     const fallbackHexHash = addHash(fallbackHex)

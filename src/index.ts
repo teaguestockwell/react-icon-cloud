@@ -1,4 +1,6 @@
 export * from './renderers/cloud'
-export * from './renderers/simpleIcon'
+export * from './renderers/simple_icon'
 export * from './types/cloud'
 export * from './types/options'
+export * from './types/simple_icon'
+export * from './utils/fetch_simple_icons'

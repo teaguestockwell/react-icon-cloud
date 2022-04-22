@@ -1,10 +1,9 @@
 import React from 'react'
 import * as ReactDOM from "react-dom";
-import {Cloud, renderSimpleIcon} from '../.'
-import js from "simple-icons/icons/javascript"
-import nextjs from "simple-icons/icons/nextdotjs"
+import {Cloud, renderSimpleIcon, fetchSimpleIcons, SimpleIcon} from '../.'
+import {siJavascript, siNextdotjs} from "simple-icons/icons"
 
-const icons = [js,nextjs].map((icon) => {
+const icons = [siJavascript, siNextdotjs].map((icon) => {
   return renderSimpleIcon({
     icon,
     size: 42,
@@ -14,7 +13,7 @@ const icons = [js,nextjs].map((icon) => {
   })
 })
 
-const IconCloud = () => {
+const StaticIconCloud = () => {
   return <Cloud>
     {icons}
     <a>
@@ -35,4 +34,46 @@ const IconCloud = () => {
   </Cloud>
 }
 
-ReactDOM.render(<IconCloud />, document.getElementById("root"));
+const useIcons = (slugs: string[]) => {
+  const [icons, setIcons] = React.useState<SimpleIcon[]>()
+  React.useEffect(() => {fetchSimpleIcons({slugs}).then(setIcons)}, [])
+
+  if (icons) {
+    return icons.map((icon) => renderSimpleIcon({
+      icon,
+      size: 42,
+      aProps: {
+        onClick: (e: any) => e.preventDefault()
+      }
+    }))
+  }
+
+  return <a>Loading</a>
+}
+
+const slugs = [
+  'amazonaws',
+  'android',
+  'androidstudio',
+  'antdesign',
+  'typescript',
+  'vercel',
+  'visualstudiocode'
+]
+
+const DynamicIconCloud = () => {
+  const icons = useIcons(slugs)
+
+  return <Cloud>
+    {icons}
+  </Cloud>
+}
+
+const App = () => {
+  return <>
+    <StaticIconCloud />
+    <DynamicIconCloud />
+  </>
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));
