@@ -1,7 +1,7 @@
-import { fetchSimpleIcons } from "./fetch_simple_icons"
 
 // make real network requests
 import 'isomorphic-fetch'
+import { fetchSimpleIcons } from './fetch_simple_icons';
 
 export const slugs = [
   'amazonaws',
@@ -43,12 +43,11 @@ export const slugs = [
   'visualstudiocode',
 ];
 
-describe('getSlugIcons', () => {
+describe('fetchIcons', () => {
   it('returns correctly formed icons', async () => {
     const icons = await fetchSimpleIcons({slugs})
-    console.log(icons)
-    expect(icons).toHaveLength(slugs.length)
-    for (const icon of icons) {
+    expect(Object.keys(icons.simpleIcons)).toHaveLength(slugs.length)
+    for (const icon of Object.values(icons.simpleIcons)) {
       expect(icon.slug).toBeTruthy()
       expect(typeof icon.slug).toBe('string')
       expect(icon.slug).not.toBe('')

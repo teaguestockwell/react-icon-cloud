@@ -36,7 +36,7 @@ const StaticIconCloud = () => {
 
 const useIcons = (slugs: string[]) => {
   const [icons, setIcons] = React.useState<SimpleIcon[]>()
-  React.useEffect(() => {fetchSimpleIcons({slugs}).then(setIcons)}, [])
+  React.useEffect(() => {fetchSimpleIcons({slugs}).then(({simpleIcons}) => setIcons(Object.values(simpleIcons)))}, [])
 
   if (icons) {
     return icons.map((icon) => renderSimpleIcon({

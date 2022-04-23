@@ -20,7 +20,7 @@ const TITLE_TO_SLUG_CHARS_REGEX = RegExp(
 
 const TITLE_TO_SLUG_RANGE_REGEX = /[^a-z0-9]/g;
 
- export const titleToSlug = (title: string) =>
+ export const getSlug = ({title}: {title: string}) =>
  title
    .toLowerCase()
    .replace(
