@@ -105,11 +105,11 @@ import React from 'react'
 import {Cloud, renderSimpleIcon, fetchSimpleIcons, SimpleIcon} from 'react-icon-cloud'
 
 const useIcons = (slugs: string[]) => {
-  const [icons, setIcons] = React.useState<SimpleIcon[]>()
+  const [icons, setIcons] = React.useState()
   React.useEffect(() => {fetchSimpleIcons(slugs).then(setIcons)}, [])
 
   if (icons) {
-    return icons.map((icon) => renderSimpleIcon({
+    return Object.values(icons.simpleIcons).map((icon) => renderSimpleIcon({
       icon,
       size: 42,
       aProps: {
@@ -168,7 +168,7 @@ Used when you cant statically import simple icons during built time. Calling thi
 ## Examples
 [Tag Canvas Options](https://www.goat1000.com/tagcanvas-options.php)
 
-[Code Sandbox](https://codesandbox.io/s/react-icon-cloud-1xr9h)
+[Code Sandbox](https://codesandbox.io/s/react-icon-cloud-d0s96s)
 
 [Dynamically Import Icons With Next.js SSR](https://github.com/teaguestockwell/portfolio-v2-nextjs/blob/main/src/components/skill_cloud.tsx)
 ## Roadmap
