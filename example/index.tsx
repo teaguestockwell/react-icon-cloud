@@ -29,7 +29,7 @@ const StaticIconCloud = () => {
         width="42"
         alt="A globe"
         src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/globe-showing-americas_1f30e.png"
-      />
+        />
     </a>
   </Cloud>
 }
@@ -71,6 +71,7 @@ const DynamicIconCloud = () => {
 
 const App = () => {
   return <>
+    <h1>{new Date().toISOString()}</h1>
     <StaticIconCloud />
     <DynamicIconCloud />
   </>
