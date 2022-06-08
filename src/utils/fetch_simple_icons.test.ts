@@ -1,7 +1,6 @@
-
 // make real network requests
 import 'isomorphic-fetch'
-import { fetchSimpleIcons } from './fetch_simple_icons';
+import {fetchSimpleIcons} from './fetch_simple_icons'
 
 export const slugs = [
   'amazonaws',
@@ -41,7 +40,7 @@ export const slugs = [
   'typescript',
   'vercel',
   'visualstudiocode',
-];
+]
 
 describe('fetchIcons', () => {
   it('returns correctly formed icons', async () => {

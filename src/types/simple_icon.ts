@@ -1,1 +1,6 @@
-export type SimpleIcon = {slug: string; path: string; hex: string; title: string}
+export type SimpleIcon = {
+  slug: string
+  path: string
+  hex: string
+  title: string
+}

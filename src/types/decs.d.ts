@@ -1,1 +1,1 @@
-declare module '@csstools/convert-colors' 
+declare module '@csstools/convert-colors'
