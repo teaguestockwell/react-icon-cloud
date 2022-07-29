@@ -1,5 +1,5 @@
 {
-  "version": "4.1.3",
+  "version": "4.1.4",
   "description": "A React component for rendering an interactive img or word cloud on canvas",
   "license": "MIT",
   "main": "dist/index.js",

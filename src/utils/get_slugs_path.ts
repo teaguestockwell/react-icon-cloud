@@ -1,6 +1,6 @@
 import {svgToPath} from './svg_to_path'
 
-const url = 'https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/'
+const url = 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/'
 const cache: Record<string, string> = {}
 const fallback = ''
 
