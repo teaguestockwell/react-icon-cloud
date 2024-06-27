@@ -99,7 +99,7 @@ import {Cloud, renderSimpleIcon, fetchSimpleIcons, SimpleIcon} from 'react-icon-
 
 const useIcons = (slugs: string[]) => {
   const [icons, setIcons] = React.useState()
-  React.useEffect(() => {fetchSimpleIcons(slugs).then(setIcons)}, [])
+  React.useEffect(() => {fetchSimpleIcons({slugs}).then(setIcons)}, [])
 
   if (icons) {
     return Object.values(icons.simpleIcons).map((icon) => renderSimpleIcon({
@@ -154,7 +154,7 @@ Used to create a tag for the Cloud component
 | minContrastRatio | number \| undefined                             | 1         | 0 - 21 The min contrast ratio between icon and bgHex before the fallbackHex will be used for the icon color                                                    |
 | size             | number \| undefined                             | 42        | The size in px of the icon                                                                                                                                     |
 ## fetchSimpleIcons
-Used when you cant statically import simple icons during built time. Calling this will use `fetch` to get icons for each provided slug.
+Used when you cant statically import simple icons during build time. Calling this will use `fetch` to get icons for each provided slug.
 |       name       |                       type                      |  default  |                                                                           description                                                                          |
 |:----------------:|:-----------------------------------------------:|:---------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | slugs           | string[]                                         |           | Slugs to fetch svgs and colors for. The return icons may be passed to renderSimpleIcon                                                                         |    
