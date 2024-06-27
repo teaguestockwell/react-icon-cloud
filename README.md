@@ -44,13 +44,6 @@ An interactive 3D tag cloud component for React that renders text, images, and s
 
 - Lazy animation of the canvas (pause animation when off screen) 
 
-## Built With
-
-- [TSdx](https://github.com/formium/tsdx)
-- [TypeScript](https://www.typescriptlang.org)
-- [TagCanvas](https://www.goat1000.com/tagcanvas.php)
-- [Simple Icons](https://github.com/simple-icons/simple-icons)
-
 ## Getting Started
 
 To get a local copy up and running follow these simple steps or see the [Code Sandbox](https://codesandbox.io/s/react-icon-cloud-1xr9h).
@@ -174,6 +167,13 @@ Used when you cant statically import simple icons during built time. Calling thi
 ## Roadmap
 
 See the [open issues](https://github.com/tsappdevelopment/react-icon-cloud/issues) for a list of proposed features (and known issues).
+
+## Built With
+
+- [TSdx](https://github.com/formium/tsdx)
+- [TypeScript](https://www.typescriptlang.org)
+- [TagCanvas](https://www.goat1000.com/tagcanvas.php)
+- [Simple Icons](https://github.com/simple-icons/simple-icons)
 
 ## License
 
