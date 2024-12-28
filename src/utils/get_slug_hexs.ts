@@ -2,7 +2,7 @@ import {addHash} from './add_hash'
 import {getSlug} from './get_slug'
 
 const url =
-  'https://raw.githubusercontent.com/simple-icons/simple-icons/develop/_data/simple-icons.json'
+  'https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/_data/simple-icons.json'
 let cache:
   | Record<string, {title: string; hex: string; slug: string}>
   | undefined

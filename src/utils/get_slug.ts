@@ -1,4 +1,4 @@
-// https://github.com/simple-icons/simple-icons/blob/develop/scripts/utils.js
+// https://github.com/simple-icons/simple-icons/blob/14.0.0/scripts/utils.js
 const TITLE_TO_SLUG_REPLACEMENTS: Record<string, string> = {
   '+': 'plus',
   '.': 'dot',
