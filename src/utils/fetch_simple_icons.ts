@@ -8,13 +8,13 @@ export const fetchSimpleIcons = async ({slugs}: {slugs: string[]}) => {
     getSlugHexs(slugs),
   ])
   const map = {} as any
-  hexs.forEach(hex => {
+  hexs.forEach((hex) => {
     map[hex.slug] = hex
   })
-  paths.forEach(path => {
+  paths.forEach((path) => {
     map[path.slug].path = path.path
   })
-  slugs.forEach(s => {
+  slugs.forEach((s) => {
     const o = map[s]
     if (!o.hex || !o.path) {
       if (process.env.NODE_ENV !== 'production') {

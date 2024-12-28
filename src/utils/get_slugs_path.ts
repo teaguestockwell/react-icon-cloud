@@ -24,11 +24,11 @@ const getSlugPath = async (slug: string) => {
 
 export const getSlugsPath = async (slugs: string[]) => {
   const map = {} as any
-  slugs.forEach(s => {
+  slugs.forEach((s) => {
     map[s] = s
   })
   await Promise.all(Object.keys(map).map(getSlugPath))
-  return slugs.map(slug => ({
+  return slugs.map((slug) => ({
     slug,
     path: cache[slug] ?? fallback,
   }))

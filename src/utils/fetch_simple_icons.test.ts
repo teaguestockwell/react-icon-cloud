@@ -59,8 +59,10 @@ describe('fetchIcons', () => {
       expect(typeof icon.hex).toBe('string')
       expect(icon.hex).not.toBe('')
 
-      const hexValues = Object.values(icons.simpleIcons).map(icon => icon.hex)
-      const allBlackHex = hexValues.every(hex => hex === '#000' || hex === '#000000')
+      const hexValues = Object.values(icons.simpleIcons).map((icon) => icon.hex)
+      const allBlackHex = hexValues.every(
+        (hex) => hex === '#000' || hex === '#000000'
+      )
       expect(allBlackHex).toBe(false)
     }
   })

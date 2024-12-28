@@ -35,7 +35,7 @@ const primeCache = async () => {
 export const getSlugHexs = async (slugs: string[]) => {
   await primeCache()
   return {
-    hexs: slugs.map(slug => ({
+    hexs: slugs.map((slug) => ({
       slug,
       hex: cache ? cache[slug]?.hex ?? fallback : fallback,
       title: cache ? cache[slug]?.title ?? 'icon' : 'icon',

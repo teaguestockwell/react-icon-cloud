@@ -25,7 +25,7 @@ export const getSlug = ({title}: {title: string}) =>
     .toLowerCase()
     .replace(
       TITLE_TO_SLUG_CHARS_REGEX,
-      char => TITLE_TO_SLUG_REPLACEMENTS[char]
+      (char) => TITLE_TO_SLUG_REPLACEMENTS[char]
     )
     .normalize('NFD')
     .replace(TITLE_TO_SLUG_RANGE_REGEX, '')

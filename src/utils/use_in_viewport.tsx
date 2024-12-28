@@ -17,8 +17,8 @@ export const UseInViewport = ({
       threshold: 0.1,
     }
 
-    const wrappedCb: IntersectionObserverCallback = entries => {
-      cb(entries.some(e => e.isIntersecting))
+    const wrappedCb: IntersectionObserverCallback = (entries) => {
+      cb(entries.some((e) => e.isIntersecting))
     }
 
     const observer = new IntersectionObserver(wrappedCb, options)
