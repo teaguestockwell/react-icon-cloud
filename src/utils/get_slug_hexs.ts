@@ -20,7 +20,7 @@ const primeCache = async () => {
       const res = await fetch(url, {cache: 'force-cache'})
       const json = await res.json()
       cache = {}
-      json.icons.forEach((icon: Icon) => {
+      json.forEach((icon: Icon) => {
         const iconSlug = getSlug({title: icon.title})
         cache![iconSlug] = {
           hex: addHash(icon.hex ?? fallback),
