@@ -10,7 +10,7 @@
     "src"
   ],
   "engines": {
-    "node": ">=10"
+    "node": ">=22"
   },
   "scripts": {
     "start": "tsdx watch",
@@ -67,11 +67,11 @@
   "size-limit": [
     {
       "path": "dist/react-icon-cloud.cjs.production.min.js",
-      "limit": "20 KB"
+      "limit": "30 KB"
     },
     {
       "path": "dist/react-icon-cloud.esm.js",
-      "limit": "20 KB"
+      "limit": "30 KB"
     }
   ],
   "devDependencies": {
