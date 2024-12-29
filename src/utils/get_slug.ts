@@ -1,4 +1,4 @@
-// https://github.com/simple-icons/simple-icons/blob/develop/scripts/utils.js
+// https://github.com/simple-icons/simple-icons/blob/14.0.0/scripts/utils.js
 const TITLE_TO_SLUG_REPLACEMENTS: Record<string, string> = {
   '+': 'plus',
   '.': 'dot',
@@ -25,7 +25,7 @@ export const getSlug = ({title}: {title: string}) =>
     .toLowerCase()
     .replace(
       TITLE_TO_SLUG_CHARS_REGEX,
-      char => TITLE_TO_SLUG_REPLACEMENTS[char]
+      (char) => TITLE_TO_SLUG_REPLACEMENTS[char]
     )
     .normalize('NFD')
     .replace(TITLE_TO_SLUG_RANGE_REGEX, '')

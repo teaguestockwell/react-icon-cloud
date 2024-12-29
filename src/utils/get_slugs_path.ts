@@ -1,6 +1,6 @@
 import {svgToPath} from './svg_to_path'
 
-const url = 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/'
+const url = 'https://cdn.jsdelivr.net/npm/simple-icons@14.0.0/icons/'
 const cache: Record<string, string> = {}
 const fallback = ''
 
@@ -24,11 +24,11 @@ const getSlugPath = async (slug: string) => {
 
 export const getSlugsPath = async (slugs: string[]) => {
   const map = {} as any
-  slugs.forEach(s => {
+  slugs.forEach((s) => {
     map[s] = s
   })
   await Promise.all(Object.keys(map).map(getSlugPath))
-  return slugs.map(slug => ({
+  return slugs.map((slug) => ({
     slug,
     path: cache[slug] ?? fallback,
   }))
